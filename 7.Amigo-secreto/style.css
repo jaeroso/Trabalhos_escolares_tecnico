@@ -1,0 +1,47 @@
+body{
+    background-color: lightcoral;
+}
+#parte1{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -45px;
+}
+h1{
+    color: lightskyblue;
+    padding: 50px;
+    font-size: 60px;
+}
+#titulo2{
+    color: tomato;
+    padding: 50px;
+    font-size: 60px;
+}
+#parte2{
+    background-color: beige;
+    text-align: center;
+}
+input{
+    padding: 7px;
+    border-radius: 10px;
+}
+#botao1{
+    background-color: brown;
+    padding: 15px;
+    color: aliceblue;
+}
+#botao2{
+    background-color: blue;
+    padding: 15px;
+    color: aliceblue;
+}
+ul{
+    list-style-type: aliceblue;
+    padding: 0;
+    margin: 0;
+}
+li{
+    background-color: aliceblue;
+    color: blue;
+    padding: 15px;
+}

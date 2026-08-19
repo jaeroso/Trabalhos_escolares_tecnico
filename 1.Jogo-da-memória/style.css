@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Tema escuro */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* Botões */
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Tabuleiro */
+#tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Cartas */
+.carta {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.frente {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  transform: rotateY(180deg);
+}
+
+.verso {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Quando a carta vira */
+.carta.virada .frente {
+  transform: rotateY(0deg);
+}
+.carta.virada .verso {
+  transform: rotateY(180deg);
+}
+
+/* Tema escuro afeta cartas */
+body.dark-mode .verso {
+  background-color: #444;
+}
+body.dark-mode .frente {
+  background-color: #222;
+  border-color: #555;
+}
+
+/* Placar e status */
+#placar, #tentativas-restantes {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}

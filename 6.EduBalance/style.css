@@ -1,0 +1,406 @@
+/* ==========================================================================
+   VARIÁVEIS DE DESIGN SYSTEM (Tema Limpo e Elegante)
+   ========================================================================== */
+:root {
+    --bg-main: #f4f6f9;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    
+    /* Cores Semânticas / Feedbacks Visuais */
+    --color-success: #10b981;
+    --color-success-light: #ecfdf5;
+    --color-alert: #f59e0b;
+    --color-alert-light: #fffbeb;
+    --color-danger: #ef4444;
+    --color-danger-light: #fef2f2;
+    --color-info: #06b6d4;
+    --color-info-light: #ecfeff;
+
+    --border-color: #e2e8f0;
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+/* ==========================================================================
+   RESETS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   HEADER & NAVEGAÇÃO (Tabs)
+   ========================================================================== */
+.main-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.logo .highlight {
+    color: var(--primary);
+}
+
+.main-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.nav-btn:hover {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
+.nav-btn.active {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   GERENCIAMENTO DE ABAS (SPA Logic)
+   ========================================================================== */
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ESTRUTURA DE CONTEÚDO PRINCIPAL
+   ========================================================================== */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    min-height: 75vh;
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ABA 1: Layout Informativo */
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.info-card-text {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.info-card-text h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.info-card-text p {
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.stats-mini-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--border-color);
+}
+
+.stat-card.alert { border-left-color: var(--color-alert); }
+.stat-card.danger { border-left-color: var(--color-danger); }
+.stat-card.success { border-left-color: var(--color-success); }
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ABA 2: Dashboard KPIs */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.kpi-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.kpi-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.kpi-value {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.kpi-sub {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+/* Utilitários de Cores Semânticas */
+.bg-success-light { background-color: var(--color-success-light); }
+.text-success { color: var(--color-success); }
+.bg-danger-light { background-color: var(--color-danger-light); }
+.text-danger { color: var(--color-danger); }
+.bg-alert-light { background-color: var(--color-alert-light); }
+.text-alert { color: var(--color-alert); }
+.bg-info-light { background-color: var(--color-info-light); }
+.text-info { color: var(--color-info); }
+
+/* Tabela Customizada */
+.table-container {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+.table-container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.styled-table th {
+    background-color: var(--bg-main);
+    padding: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.styled-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 50px;
+}
+
+.badge.danger { background: var(--color-danger-light); color: var(--color-danger); }
+.badge.success { background: var(--color-success-light); color: var(--color-success); }
+.badge.alert { background: var(--color-alert-light); color: var(--color-alert); }
+
+/* ABA 3: Layout de Gráficos e Recomendações */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.chart-wrapper {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.chart-wrapper h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.recommendations-section {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.recommendations-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.rec-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rec-list li {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.rec-icon {
+    font-size: 1.5rem;
+    background: var(--bg-main);
+    padding: 0.75rem;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.rec-text h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.rec-text p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-card);
+    margin-top: 4rem;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Media Queries)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .grid-two-columns, .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .main-content {
+        padding: 0 1rem;
+        margin: 1rem auto;
+    }
+
+    .section-header h1 {
+        font-size: 1.5rem;
+    }
+}

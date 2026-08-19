@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consequências do Bullying</title><style>
+:root {
+    --bg: #0b1020;
+    --card: #121a33;
+    --primary: #818cf8;
+    --danger: #ef4444;
+    --text: #e5e7eb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+body { background: radial-gradient(circle at top, #111827, #020617); color: var(--text); }
+
+header {
+    text-align:center;
+    padding: 100px 20px 60px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color:#9ca3af;
+    max-width:600px;
+    margin:auto;
+}
+
+.hero-impact {
+    text-align:center;
+    margin-top:30px;
+    font-size:1.4rem;
+    color: var(--danger);
+    font-weight:bold;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap:25px;
+}
+
+.card {
+    background: var(--card);
+    padding:25px;
+    border-radius:18px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.3s;
+    opacity:0;
+    transform: translateY(30px);
+}
+
+.card.show { opacity:1; transform: translateY(0); }
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(129,140,248,0.5);
+}
+
+h2 { color:white; margin-bottom:10px; }
+
+p { color:#9ca3af; line-height:1.6; }
+
+.highlight {
+    margin-top:15px;
+    padding:15px;
+    border-left:4px solid var(--danger);
+    background: rgba(239,68,68,0.1);
+    border-radius:8px;
+}
+
+.cta {
+    text-align:center;
+    margin: 60px 20px;
+}
+
+.button {
+    padding:14px 28px;
+    background: var(--primary);
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    box-shadow: 0 0 20px rgba(129,140,248,0.8);
+    transform: scale(1.05);
+}
+
+footer {
+    text-align:center;
+    padding:30px;
+    color:#6b7280;
+}
+
+</style></head><body><header>
+    <h1>O Peso do Bullying</h1>
+    <p>O bullying não termina na hora. Ele deixa marcas profundas na mente, nas emoções e na vida social.</p>
+    <div class="hero-impact">Não é só uma fase. Pode mudar uma vida inteira.</div>
+</header><div class="container"><div class="card">
+    <h2>Saúde Mental</h2>
+    <p>
+        Vítimas de bullying frequentemente desenvolvem ansiedade, depressão e pensamentos negativos constantes.
+        A mente passa a viver em estado de alerta.
+    </p>
+    <div class="highlight">
+        O impacto psicológico pode durar anos — mesmo após o bullying acabar.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Impacto Emocional</h2>
+    <p>
+        A autoestima é destruída aos poucos. A pessoa começa a acreditar nas ofensas
+        e perde a confiança em si mesma.
+    </p>
+    <div class="highlight">
+        A dor emocional muitas vezes é invisível — mas extremamente real.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Vida Social</h2>
+    <p>
+        O isolamento se torna comum. A vítima evita interações, amizades e até ambientes sociais
+        por medo de julgamento ou novas agressões.
+    </p>
+    <div class="highlight">
+        O bullying pode impedir alguém de viver experiências normais da vida.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Desempenho Escolar</h2>
+    <p>
+        A concentração cai, o interesse desaparece e o rendimento diminui.
+        O ambiente que deveria ser seguro se torna um lugar de medo.
+    </p>
+    <div class="highlight">
+        Muitos alunos deixam de aprender por causa do bullying.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Relacionamentos Futuros</h2>
+    <p>
+        Experiências de bullying podem afetar a forma como a pessoa se relaciona no futuro.
+        Medo de rejeição e dificuldade em confiar nos outros se tornam comuns.
+    </p>
+    <div class="highlight">
+        As marcas podem influenciar amizades, família e até relações amorosas.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Identidade e Autoimagem</h2>
+    <p>
+        A vítima pode começar a se enxergar de forma distorcida,
+        acreditando que merece as críticas ou que não tem valor.
+    </p>
+    <div class="highlight">
+        O bullying pode moldar negativamente a forma como alguém vê a si mesmo.
+    </div>
+</div>
+
+</div><div class="cta">
+    <a href="https://www.gov.br/pt-br/servicos/denunciar-violacoes-de-direitos-humanos" target="_blank" class="button">
+        Preciso de ajuda
+    </a>
+</div><footer>
+    <p>© 2026 | Conscientização contra o bullying</p>
+</footer><script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            card.classList.add('show');
+        }
+    });
+});
+</script></body>
+</html>

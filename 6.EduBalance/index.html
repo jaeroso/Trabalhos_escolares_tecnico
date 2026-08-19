@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBalance - Gestão de Tempo e Conectividade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Edu<span class="highlight">Balance</span></span>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-btn active" data-tab="informativa">Início</button>
+                <button class="nav-btn" data-tab="dashboard">Dashboard</button>
+                <button class="nav-btn" data-tab="graficos">Gráficos & Dicas</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section id="informativa" class="tab-content active">
+            <header class="section-header">
+                <h1>O Ecossistema Digital e o Impacto no Estudo</h1>
+                <p>Uma análise contemporânea sobre o uso de redes sociais, streaming, inteligência artificial e a divisão do tempo estudantil.</p>
+            </header>
+
+            <div class="grid-two-columns">
+                <article class="info-card-text">
+                    <h2>Distração Passiva vs. Uso Produtivo</h2>
+                    <p>O cenário educacional atual enfrenta um paradoxo sem precedentes. Ao mesmo tempo em que algoritmos de Redes Sociais e plataformas de Streaming são desenhados para capturar a atenção de forma passiva, ferramentas de Inteligência Artificial surgem como catalisadores de produtividade.</p>
+                    <p>O segredo não reside na abstenção tecnológica, mas no desenvolvimento da <strong>autonomia digital</strong>, transformando o tempo gasto como mero consumidor em horas investidas no desenvolvimento pessoal e acadêmico.</p>
+                </article>
+                <div class="stats-mini-grid">
+                    <div class="stat-card alert">
+                        <h3>4.5h</h3>
+                        <p>Média diária gasta em redes sociais por estudantes.</p>
+                    </div>
+                    <div class="stat-card danger">
+                        <h3>-30%</h3>
+                        <p>Redução no tempo dedicado à leitura de livros didáticos.</p>
+                    </div>
+                    <div class="stat-card success">
+                        <h3>+40%</h3>
+                        <p>Eficiência em revisões com uso ético de IA.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="tab-content">
+            <header class="section-header">
+                <h1>Métricas de Uso e Desempenho</h1>
+                <p>Consolidado estatístico baseado em perfis amostrais de estudantes e divisão de foco.</p>
+            </header>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-title">Média de Tela Diária</span>
+                    <span class="kpi-value">5.2h</span>
+                    <span class="kpi-sub bg-danger-light text-danger">Redes + Streaming</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Média de Estudos</span>
+                    <span class="kpi-value">2.8h</span>
+                    <span class="kpi-sub bg-success-light text-success">Foco Ativo</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Uso de IA</span>
+                    <span class="kpi-value">65%</span>
+                    <span class="kpi-sub bg-info-light text-info">Foco Produtivo</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-title">Índice de Equilíbrio</span>
+                    <span class="kpi-value text-alert">Atenção</span>
+                    <span class="kpi-sub bg-alert-light text-alert">Risco de sobrecarga</span>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h2>Amostragem por Perfil de Estudante</h2>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Estudante / Perfil</th>
+                            <th>Redes Sociais</th>
+                            <th>Streaming</th>
+                            <th>Uso de IA</th>
+                            <th>Horas de Estudo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estudante A</strong> (Conectado)</td>
+                            <td>6h</td>
+                            <td>2h</td>
+                            <td>0.5h (Distração)</td>
+                            <td>1h</td>
+                            <td><span class="badge danger">Crítico</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estudante B</strong> (Focado)</td>
+                            <td>1h</td>
+                            <td>1h</td>
+                            <td>2h (Produtivo)</td>
+                            <td>4.5h</td>
+                            <td><span class="badge success">Saudável</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estudante C</strong> (Moderado)</td>
+                            <td>3h</td>
+                            <td>1.5h</td>
+                            <td>1h (Misto)</td>
+                            <td>2.5h</td>
+                            <td><span class="badge alert">Alerta</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estudante D</strong> (Tecnológico)</td>
+                            <td>2h</td>
+                            <td>0.5h</td>
+                            <td>3h (Pesquisa)</td>
+                            <td>4h</td>
+                            <td><span class="badge success">Saudável</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="graficos" class="tab-content">
+            <header class="section-header">
+                <h1>Análise Visual & Recomendações</h1>
+                <p>Compreenda a distribuição dos dados e conheça metodologias validadas para otimização do tempo.</p>
+            </header>
+
+            <div class="charts-grid">
+                <div class="chart-wrapper">
+                    <h3>Tempo de Tela vs. Horas de Estudo (Por Perfil)</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <h3>Distribuição Média do Tempo Digital</h3>
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h2>Ações Práticas para o Equilíbrio Digital</h2>
+                <ul class="rec-list">
+                    <li>
+                        <div class="rec-icon">⏰</div>
+                        <div class="rec-text">
+                            <h3>Técnica Pomodoro Adaptada</h3>
+                            <p>Realize blocos de 25 ou 50 minutos de estudo totalmente focado, seguidos por intervalos curtos. Utilize o intervalo para descansar os olhos e a mente, evite abrir redes sociais nesses microdescansos.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="rec-icon">🛡️</div>
+                        <div class="rec-text">
+                            <h3>Bloqueadores de Conteúdo Estruturados</h3>
+                            <p>Utilize extensões e ferramentas nativas do sistema (como Focus Mode) para bloquear notificações de plataformas de streaming e redes sociais durante as janelas críticas de aprendizagem.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="rec-icon">🤖</div>
+                        <div class="rec-text">
+                            <h3>Uso Ético e Ativo de Inteligência Artificial</h3>
+                            <p>Substitua o scroll passivo pelo uso ativo de IAs para criar sumários, flashcards, simular sabatinas ou explicar conceitos complexos através da técnica Feynman.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 EduBalance. Desenvolvido com foco em UX/UI e Performance.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
