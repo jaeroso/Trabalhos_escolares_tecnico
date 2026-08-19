@@ -47,3 +47,7 @@ O EduBalance é um dashboard educacional sobre o equilíbrio entre tecnologia e 
 ### 7. Amigo Secreto
 
 O Amigo Secreto permite cadastrar nomes e sortear aleatoriamente um participante. Desenvolvido com HTML, CSS e JavaScript, utiliza arrays, eventos, validação de campos e Math.random(). A versão enviada realiza a escolha de um nome, mas ainda não distribui pares completos nem impede repetições.
+
+### 8. PixelStore
+
+A PixelStore é uma página de apresentação para uma loja virtual de produtos gamers, como mouse, teclado mecânico e headset. Desenvolvida com PHP, HTML e CSS, possui cabeçalho com navegação, banner, cartões de produtos, imagens, preços e rodapé, utilizando um visual escuro associado ao universo gamer. O projeto também inclui um arquivo de conexão com banco de dados, mas essa conexão ainda não é utilizada pela página, que apresenta produtos estáticos e não possui carrinho, sistema de login ou compra online; além disso, o CSS referencia uma imagem de banner que não está presente nos arquivos enviados.
